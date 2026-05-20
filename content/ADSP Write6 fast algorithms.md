@@ -23,41 +23,29 @@ pages:
 
 # ADSP Write6 fast algorithms
 
-Write6 問的是 computational structure：同樣的 DFT/DCT，怎麼把矩陣拆成 sparse factors、permutations、butterflies，讓實作變快。
+Write6 的主題不是新的 transform，而是問：同一個 [[Discrete Fourier transform]] 或 [[Discrete cosine transform]]，能不能用更少乘法、加法與記憶體搬移算出來？
 
-## 深入解說
+這份講義的路線可以這樣讀：
 
-這篇是課程地圖，不是孤立定義。ADSP 的順序可以看成四層：先用 [[Fourier transform family]] 和 [[Z-transform]] 建立 signal/system language；再用 [[FIR filter]]、[[IIR filter]] 和 approximation norms 做 filter design；接著把這些工具放到 speech、image、compression、homomorphic processing；最後用 [[Fast Fourier transform]] 和 matrix factorization 讓演算法可計算。你的背景有微積分和數理統計，所以最需要補的是三塊橋樑：complex exponential notation、linear algebra projection/eigen concepts、random-signal expectation/correlation。
+1. 先用 [[Fast algorithm design]] 建立觀念：fast algorithm 依靠 symmetry、periodicity、sparsity、separability，不是改變數學答案。
+2. 再看 [[Complexity of DFT and convolution]]：直接 DFT 是 $O(N^2)$，如果每次都照定義算，長訊號和影像 block 會太慢。
+3. 把 transform 寫成矩陣後，接 [[Matrix multiplication complexity]]：fast DFT/DCT 本質上是把 dense transform matrix 分解成 sparse factors、permutation、diagonal twiddle matrices。
+4. 進入 FFT 結構：[[Butterfly computation]] 是最小局部運算，[[Twiddle factor]] 是子問題之間的 phase correction，[[Cooley-Tukey FFT]] 是主要分解框架。
+5. 最後比較不同分解：[[Radix-4 FFT]] 用 4-way decomposition 減少 stage；[[Prime factor FFT]] 在長度互質時用 index mapping 減少 twiddle 成本。
 
-## 對你目前程度的讀法
+讀圖時不要先盯著線路圖背。先標出 input order、output order、stage number、每個 stage 的 small DFT，以及哪裡只是 permutation。講義中的 fast DCT 圖也可以用同一種眼光看：它把 DCT matrix 拆成比較便宜的加減、旋轉和重排。
 
-先把這篇放回 [[ADSP notation survival guide]]。如果公式看起來突然跳太快，先不要急著背結論；把每個 symbol 的 role 寫在旁邊：它是 sample index、frequency variable、filter coefficient、random variable，還是 matrix/vector component。ADSP 很多困難其實不是微積分技巧，而是 notation 在 time domain、frequency domain、Z-domain、matrix domain 之間切換。
-
-## 公式和講義圖怎麼讀
-
-全課可用一條公式鏈串起來：signal $x[n]$ 進入 transform 得 coefficients，coefficients 被設計、壓縮、估計或快速計算，最後再回到 signal 或 decision。每章差別在 objective：filter design 要 response，speech 要 features，compression 要 rate-distortion，fast algorithm 要 complexity。
-
-## 常見卡點
-
-- 把 DFT bin 當成連續頻率，會誤讀頻譜解析度與 aliasing。
-- 只看 magnitude 不看 phase，會漏掉 delay、linear phase、minimum phase、cepstrum inverse 等問題。
-- 把 optimal 當成絕對最好；其實 optimal 永遠相對於 chosen model、norm、constraint。
-- 忘記 implementation cost；ADSP 後半的 fast algorithms 會一直追問同一個數學結果能不能更有效率地算。
-
-## 自我檢查
-
-能不能把一個章節放到 transform、design、application、implementation 四層中的哪一層？能不能指出它需要補哪個 prerequisite？
-
-## 相關筆記
-
-- [[Advanced digital signal processing]]
-- [[ADSP math prerequisites MOC]]
-- [[ADSP notation survival guide]]
-
+這章往前連到 [[Discrete Fourier transform]]、[[Discrete cosine transform]]、[[Twiddle factor]]；往後連到實作時的 [[Python and MATLAB for signal processing]]。如果你在 index decomposition 卡住，先讀 [[Fast algorithm prerequisite map]]，再回來看 Cooley-Tukey 的 $N=N_1N_2$ 分解。
 
 ## 講義截圖
 
 ![Fast algorithm design goals](assets/adsp/ADSP_Write6_p001_fast_algorithm_design.png)
+
+![Matrix simplification for fast algorithms](assets/adsp/ADSP_Write6_p004_matrix_simplification.png)
+
+![8-point DCT fast structure](assets/adsp/ADSP_Write6_p013_fast_dct.png)
+
+![Complexity summary](assets/adsp/ADSP_Write6_p016_complexity_summary.png)
 
 ![Two-point DFT butterfly](assets/adsp/ADSP_Write6_p021_butterfly.png)
 

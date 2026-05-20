@@ -23,40 +23,21 @@ pages:
 
 # ADSP Write2 FIR design details
 
-Write2 進入 FIR design 的工程細節：transition band、ripple、weight function、四種 linear-phase symmetry、frequency sampling method。重點是理解規格如何限制 filter length，而不是只記哪種 type 對應哪種 symmetry。
+Write2 接著 Write1 的 FIR design，從「知道方法」進到「知道規格如何影響設計」。
 
-## 深入解說
+主線可以這樣走：
 
-這篇是課程地圖，不是孤立定義。ADSP 的順序可以看成四層：先用 [[Fourier transform family]] 和 [[Z-transform]] 建立 signal/system language；再用 [[FIR filter]]、[[IIR filter]] 和 approximation norms 做 filter design；接著把這些工具放到 speech、image、compression、homomorphic processing；最後用 [[Fast Fourier transform]] 和 matrix factorization 讓演算法可計算。你的背景有微積分和數理統計，所以最需要補的是三塊橋樑：complex exponential notation、linear algebra projection/eigen concepts、random-signal expectation/correlation。
+1. [[Filter transition band]]：transition band 越窄，通常 filter length 越長。
+2. [[Weighted approximation error]]：passband/stopband 權重改變後，ripple 會重新分配。
+3. [[Four FIR filter symmetry types]]：linear-phase FIR 依 length 奇偶和對稱/反對稱分成四類；每一類在 $\omega=0$ 或 $\pi$ 的限制不同，不能亂套。
+4. [[Frequency sampling FIR design]]：直接指定若干 frequency samples，再用 inverse DFT 得到 impulse response；直觀但 ripple/transition 控制較粗。
 
-## 對你目前程度的讀法
+這份講義應該連回 [[Linear phase FIR filter]]、[[Least MSE FIR design]]、[[Minimax FIR design]]。如果只背 type I/II/III/IV 會很快忘；比較好的讀法是問：「這個 symmetry 強迫 frequency response 長什麼樣？它適合 low-pass、high-pass、Hilbert transformer，還是 differentiator？」
 
-先把這篇放回 [[ADSP notation survival guide]]。如果公式看起來突然跳太快，先不要急著背結論；把每個 symbol 的 role 寫在旁邊：它是 sample index、frequency variable、filter coefficient、random variable，還是 matrix/vector component。ADSP 很多困難其實不是微積分技巧，而是 notation 在 time domain、frequency domain、Z-domain、matrix domain 之間切換。
-
-## 公式和講義圖怎麼讀
-
-全課可用一條公式鏈串起來：signal $x[n]$ 進入 transform 得 coefficients，coefficients 被設計、壓縮、估計或快速計算，最後再回到 signal 或 decision。每章差別在 objective：filter design 要 response，speech 要 features，compression 要 rate-distortion，fast algorithm 要 complexity。
-
-## 常見卡點
-
-- 把 DFT bin 當成連續頻率，會誤讀頻譜解析度與 aliasing。
-- 只看 magnitude 不看 phase，會漏掉 delay、linear phase、minimum phase、cepstrum inverse 等問題。
-- 把 optimal 當成絕對最好；其實 optimal 永遠相對於 chosen model、norm、constraint。
-- 忘記 implementation cost；ADSP 後半的 fast algorithms 會一直追問同一個數學結果能不能更有效率地算。
-
-## 自我檢查
-
-能不能把一個章節放到 transform、design、application、implementation 四層中的哪一層？能不能指出它需要補哪個 prerequisite？
-
-## 相關筆記
-
-- [[Advanced digital signal processing]]
-- [[ADSP math prerequisites MOC]]
-- [[ADSP notation survival guide]]
+前置補洞：[[Optimization for filter design]]、[[Frequency response]]、[[Discrete Fourier transform]]。
 
 
 ## 講義截圖
-
 ![Filter length, transition band, and ripple](assets/adsp/ADSP_Write2_p001_filter_length_transition_ripple.png)
 
 ![Weight functions and accuracy](assets/adsp/ADSP_Write2_p004_weight_function_accuracy.png)

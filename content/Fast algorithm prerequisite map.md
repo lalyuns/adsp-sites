@@ -13,23 +13,18 @@ tags:
 
 # Fast algorithm prerequisite map
 
-Fast algorithm 的前置觀念不是高等微積分，而是 index decomposition 和矩陣分解。
+這篇只保留 Write6 需要的前置工具。
 
-- index decomposition：把 $n$ 或 $k$ 寫成多個 smaller indices。
-- symmetry/periodicity：利用 $W_N^{k+N}=W_N^k$ 等重複。
-- sparse factorization：把 dense transform matrix 拆成 sparse stages。
-- complexity counting：分清楚 multiplication、addition、memory permutation。
+先補三個 notation：
 
-這張圖連到 [[Fast Fourier transform]]、[[Butterfly computation]]、[[Cooley-Tukey FFT]]、[[Radix-4 FFT]]、[[Prime factor FFT]]。
+- [[Discrete Fourier transform]]：知道 DFT matrix 和 $W_N^{kn}$。
+- [[Twiddle factor]]：知道 $W_N^k=e^{-j2\pi k/N}$ 是 complex rotation。
+- [[Matrix multiplication complexity]]：知道 dense matrix-vector multiplication 為什麼貴。
 
-## 使用方法
+再補三個讀圖技巧：
 
-這篇 meta note 不需要一次背完。你可以在讀講義時回來查：先找自己卡住的是 notation、domain、random signal、matrix factorization、還是 optimization，再沿著連結回到對應概念筆記。若一個公式同時含有 transform 和 expectation，先分開處理，不要把所有符號混在同一層理解。
+- index decomposition：把 $n,k$ 拆成 smaller indices。
+- permutation：有些線只是重新排序，不是新的數學運算。
+- stage：每一層通常做 small DFT、butterfly、或 twiddle multiplication。
 
-## 和 ADSP 講義的關聯
-
-- Write1/Write2 多半需要 notation、spectral analysis、filter-design optimization。
-- Write3 需要 probability、cepstrum prerequisite、filter interpretation。
-- Write4 需要 STFT、speech source-filter model、linear algebra。
-- Write5 需要 transform coding、quantization、entropy。
-- Write6 需要 index decomposition、matrix factorization、complexity counting。
+最後回到主線：[[Fast Fourier transform]]、[[Cooley-Tukey FFT]]、[[Radix-4 FFT]]、[[Prime factor FFT]]。如果你能說出每張圖中哪些是加減、哪些是旋轉、哪些是重排，就已經抓到 Write6 的核心。
