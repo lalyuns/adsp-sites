@@ -12,19 +12,32 @@ tags:
 
 # Bacry Muzy 2015 Hawkes second-order statistics
 
-這篇是 Hawkes 專題的理論與 estimation 核心。作者說明 multivariate Hawkes process 的 second-order statistics 可以 characterization kernel matrix，並用 Wiener-Hopf integral equations 做 non-parametric estimation。
+這篇提供 Hawkes 報告的 theoretical backbone。它說明 multivariate Hawkes process 的 second-order statistics 能 characterize kernel matrix，並形成 nonparametric estimation 的基礎。
 
-報告重點：
+## Key Equation
 
-- [[Multivariate Hawkes process]] 的 intensity 是 baseline intensity 加上 past jumps 經 kernel matrix 的影響。
-- [[Hawkes kernel matrix]] 的元素描述不同 event types 之間的 excitation/inhibition。
-- second-order statistics 包含 covariance/correlation of jumps；這些統計量與 kernel matrix 之間可寫成 Wiener-Hopf system。
-- [[Nonparametric Hawkes estimation]] 的優點是不必預先假設 exponential kernel shape。
+對 multivariate Hawkes，
 
-這篇可放在 Background/Methodology，支撐後面 LOB papers 的 kernel calibration。
+$$
+\lambda_i(t)=\mu_i+\sum_j\int_0^t \phi_{ij}(t-s)dN_j(s).
+$$
 
-## 論文圖表截圖
+kernel $\phi_{ij}$ 描述 type $j$ event 對 type $i$ future intensity 的影響。若允許 non-positive kernels，也能描述 inhibition。
 
-![Multivariate Hawkes process definition](assets/adsp/projects/hawkes_second_order_statistics_p002_hawkes_definition.png)
+## Main Contribution
 
-![Wiener-Hopf system for Hawkes kernel estimation](assets/adsp/projects/hawkes_second_order_statistics_p004_wiener_hopf_system.png)
+作者把 jumps correlation / covariance 與 kernel matrix 連成 Wiener-Hopf integral equations。這代表可以從 empirical second-order statistics 反推出 $\phi_{ij}(t)$，而不必先假設 kernel 是 exponential。
+
+## How To Use In The Report
+
+把這篇放在 methodology background：它提供「如何從資料估 Hawkes kernels」的理論理由。後面的 LOB papers 才能討論 calibrated kernels 是否有 market microstructure interpretation。
+
+## Limitation
+
+Nonparametric estimation 需要選 discretization、support length、regularization/estimation parameters。報告中不要只說它 flexible，也要說它會把問題轉成 inverse problem。
+
+## Figures For Report
+
+![Multivariate Hawkes intensity and kernel matrix notation](assets/adsp/projects/hawkes_multivariate_definition_cropped.png)
+
+![Wiener-Hopf equations linking second-order statistics and Hawkes kernels](assets/adsp/projects/hawkes_wiener_hopf_cropped.png)

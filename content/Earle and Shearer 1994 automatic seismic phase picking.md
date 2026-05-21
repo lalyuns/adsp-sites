@@ -12,19 +12,32 @@ tags:
 
 # Earle and Shearer 1994 automatic seismic phase picking
 
-這篇提供地震波專題的 classical baseline。作者用 envelope function 上的 STA/LTA ratio 進行 automatic phase picking，並把方法套到 NEIC 大量全球 seismograms。
+這篇是地震波報告的 classical baseline。它的價值不是演算法複雜，而是把一個簡單 STA/LTA picker 套到大量全球 seismograms，證明 automatic picks 可以形成可解讀的 travel-time images。
 
-可放進 report 的重點：
+## Method
 
-- Method：先把 seismogram 轉成 envelope，再計算 [[STA LTA picker]]。STA/LTA 超過 threshold 時產生 phase arrival candidate，並估計 pick quality。
-- ADSP 連結：envelope extraction、smoothing、thresholding、time-domain detector、travel-time visualization。
-- Result interpretation：high-frequency data pick precision 較好；long-period data 可看到更多 low-frequency phases。travel-time plots 可以看成大量 automatic picks 疊出的 time-distance image。
-- Limitations：threshold-based detector 對 noise、emergent onset、phase overlap 敏感。
+流程可以寫成：
 
-報告中可把它當作「能量型 detector」代表，和 [[AIC picker]]、[[Waveform correlation detector]] 比較。
+1. 從 seismogram 產生 envelope/characteristic function $e[n]$。
+2. 計算 $\mathrm{STA}[n]$ 與 $\mathrm{LTA}[n]$。
+3. 用 $R[n]=\mathrm{STA}[n]/\mathrm{LTA}[n]$ 找 trigger point。
+4. 用 threshold、trigger timing、ratio shape 產生 arrival time 和 pick quality。
+5. 把大量 picks 疊成 time-distance plots，觀察 P、PP、S、SS 等 phases。
 
-## 論文圖表截圖
+## How To Use In The Report
 
-![STA/LTA envelope picking procedure](assets/adsp/projects/seismic_earle_shearer_1994_p002_sta_lta_procedure.png)
+這篇適合放在「energy-ratio detector」小節。它示範 ADSP 中最基本的 detection pipeline：preprocess -> characteristic function -> smoothing windows -> threshold -> visualization。
 
-![Global seismic travel-time curves from automatic picks](assets/adsp/projects/seismic_earle_shearer_1994_p005_global_travel_time_curves.png)
+## Important Interpretation
+
+高頻資料的 picks 較精準，但 long-period 資料能呈現更多低頻 phases。這提供一個很好的 discussion point：sampling rate / bandwidth / noise environment 會改變 detector 能看到的 seismic phases。
+
+## Limitation
+
+STA/LTA 對 threshold 很敏感，也容易受 emergent arrival、phase overlap、nonstationary noise 影響。這正好引出 [[AIC picker]] 與 [[Wavelet transform for seismic picking]]。
+
+## Figures For Report
+
+![STA/LTA envelope picker and trigger threshold](assets/adsp/projects/seismic_sta_lta_picker_figure.png)
+
+![Automatically picked travel-time curves in time-distance space](assets/adsp/projects/seismic_global_travel_time_curves_cropped.png)

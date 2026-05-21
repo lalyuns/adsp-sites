@@ -13,24 +13,31 @@ tags:
 
 # Compound Hawkes process for LOB order size modeling
 
-這篇把 Hawkes process 用於 [[Limit order book events]]，並進一步加入 order size。一般 Hawkes LOB 模型常只處理 event timing/type，這篇用 compound Hawkes process 讓每個 event 帶有 sampled order size。
+這篇把 LOB simulator 從「只有 event times/types」推進到「event 帶有 order size」。它適合放在 report 的 applied modeling section。
 
-可放進報告的貢獻：
+## Model Interpretation
 
-- 模型不只生成 event time/type，也生成 order size。
-- calibrates non-parametric kernels，允許 inhibitory cross-excitation。
-- parameters condition on time of day，對應市場 intraday seasonality。
-- 模擬器可重現部分 LOB stylized facts，例如 returns distribution、inter-arrival time、spread distribution、market impact concavity。
+LOB event stream 可以包含多種 event types，例如 limit order、market order、cancel order，以及 bid/ask side。Compound Hawkes 的想法是：事件由 Hawkes intensity 產生，但每個 event 還附帶 size mark，因此 simulation 能推動 order book state。
 
-報告討論：
+## Contributions For Report
 
-- 優點：比只建模 inter-event time 更接近真實 LOB simulator。
-- 限制：order size distribution 和 state dependence 的建模仍可能不夠彈性，這可接到 [[Neural marked Hawkes process for LOB]]。
+- 用 nonparametric kernels 捕捉 event types 之間的 excitation/inhibition。
+- 讓 model parameters condition on time of day，反映 intraday seasonality。
+- 校準 order size distributions，避免把所有 order size 當常數。
+- 用 simulator 檢查 stylized facts：inter-arrival time、spread、returns、market impact。
 
-## 論文圖表截圖
+## Important Figure Reading
 
-![Compound Hawkes calibrated excitation kernels](assets/adsp/projects/hawkes_compound_lob_p007_compound_hawkes_kernels.png)
+calibrated kernels 圖可用來討論 cross-excitation：某一種 order event 是否會提升另一種 event 的 arrival rate。market impact 圖則可支撐 simulator 是否有經濟合理性。
 
-![Compound Hawkes LOB simulation quality of fit](assets/adsp/projects/hawkes_compound_lob_p008_compound_hawkes_results.png)
+## Limitation
 
-![Market impact study using compound Hawkes simulator](assets/adsp/projects/hawkes_compound_lob_p011_compound_market_impact.png)
+即使加入 size，mark distribution 仍可能不夠 history-dependent。這正好引到 [[Neural marked Hawkes process for LOB]]。
+
+## Figures For Report
+
+![Calibrated excitation and inhibition kernels for LOB event types](assets/adsp/projects/hawkes_compound_calibrated_kernels_cropped.png)
+
+![Compound Hawkes LOB simulator quality-of-fit diagnostics](assets/adsp/projects/hawkes_compound_fit_results_cropped.png)
+
+![Market impact experiments in a compound Hawkes LOB simulator](assets/adsp/projects/hawkes_compound_market_impact_cropped.png)

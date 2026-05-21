@@ -13,23 +13,32 @@ tags:
 
 # Neural marked Hawkes process for LOB
 
-這篇是 Hawkes 專題的 neural extension。它把 LOB event stream 視為 multivariate marked temporal point process，其中 event type 是 order type，mark 是 order volume。
+這篇是 Hawkes/LOB 題目的 modern extension。它保留 temporal point process 的 event-stream view，但把 mark distribution 交給 neural history representation。
 
-核心貢獻：
+## Problem
 
-- 用 Neural Hawkes Process architecture 建立 history vector。
-- mark distribution 不再固定或只依賴 latest observation，而是 conditioned on history。
-- 以 Conditional Normalizing Flows 或 Mixture Density Network 表示複雜 volume distributions。
-- 同時評估 event type likelihood 和 mark likelihood，證明 history-dependent mark modeling 有幫助。
+LOB volume/order-size distributions are multimodal and history-dependent. Classical marked Hawkes models often use simple mark distributions or assume marks depend only weakly on history.
 
-報告定位：
+## Model Idea
 
-- 和 [[Bacry Muzy 2015 Hawkes second-order statistics]] 相比：這篇比較 flexible，但可解釋性較低。
-- 和 [[Compound Hawkes process for LOB order size modeling]] 相比：compound Hawkes 更透明，NMHP 更能處理 multimodal/history-dependent volume。
-- 可放在 Discussion 作為 modern extension。
+令 history embedding 為 $h(t)$。模型把 event type intensity 與 mark density 分開：
 
-## 論文圖表截圖
+$$
+\lambda_k(t,v)=\lambda_k(t)\,p_k(v\mid h(t)).
+$$
 
-![Neural marked Hawkes process architecture](assets/adsp/projects/hawkes_neural_marked_lob_p006_neural_marked_architecture.png)
+$p_k(v\mid h(t))$ 可由 Conditional Normalizing Flow 或 Mixture Density Network 表示，因此能處理 non-Gaussian, multimodal, history-dependent volume distributions。
 
-![Neural marked Hawkes process ablation results](assets/adsp/projects/hawkes_neural_marked_lob_p011_neural_marked_results.png)
+## How To Use In The Report
+
+這篇適合放在最後的 extension/discussion：它顯示 Hawkes process 可以從 interpretable kernels 走向 representation learning。但也要誠實說，neural model 的可解釋性低於 kernel matrix，且評估通常依賴 likelihood/ablation rather than direct economic interpretation。
+
+## Comparison Point
+
+相對於 [[Compound Hawkes process for LOB order size modeling]]，NMHP 更強調 conditional mark distribution；相對於 [[Bacry Muzy 2015 Hawkes second-order statistics]]，它更少強調 closed-form kernel interpretation。
+
+## Figures For Report
+
+![Neural marked Hawkes architecture with history-conditioned mark distributions](assets/adsp/projects/hawkes_neural_marked_architecture_cropped.png)
+
+![Ablation results for type and mark likelihoods in neural marked Hawkes models](assets/adsp/projects/hawkes_neural_marked_results_tables_cropped.png)

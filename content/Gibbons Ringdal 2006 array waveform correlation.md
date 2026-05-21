@@ -12,22 +12,30 @@ tags:
 
 # Gibbons Ringdal 2006 array waveform correlation
 
-這篇適合當地震波專題的 matched-filter / template-based detection 代表。作者用 waveform template 和 incoming data 做 running cross-correlation，並把 correlation traces 在 seismic array 上 stack/beamform，提高低震級事件的 detection power。
+這篇代表 template-based seismic detection。它的問題設定和 STA/LTA 不同：不是偵測任何 sudden energy，而是在 continuous data stream 中找「和已知 event waveform 相似」的弱事件。
 
-核心 idea：
+## Method
 
-- 若兩個事件 co-located，waveform pattern 會相似；cross-correlation peak 的 lag 可指出重複事件。
-- 單站 correlation 已可比 STA/LTA 更敏感；array-based stacking 進一步利用多 sensor coherence。
-- 即使原始 waveform 在各 station 上不完全相同，只要 correlation coefficient traces coherent，就能透過 array gain 偵測弱事件。
+單站 detector 是 normalized running cross-correlation：
 
-報告比較：
+$$
+C_m[\ell]=
+\frac{\langle s_m, x_m[\ell:\ell+L]\rangle}
+{\|s_m\|\,\|x_m[\ell:\ell+L]\|}.
+$$
 
-- 和 [[STA LTA picker]] 相比，correlation detector 對 known/repeating source 很強，但需要 template。
-- 和 [[Wavelet transform for seismic picking]] 相比，它不是一般 onset picker，而是 similarity detector。
-- 和 [[Matched filter]] 直接相關，可放在 ADSP 方法章。
+如果兩個 events co-located，correlation peaks 的 relative timing 在 array stations 上會 coherent。把多個 channels 的 correlation traces 對齊並 stack，就能取得 array gain。
 
-## 論文圖表截圖
+## Report-Level Reading
 
-![Running waveform correlation detector equations](assets/adsp/projects/seismic_gibbons_ringdal_2006_p003_waveform_correlation_equations.png)
+這篇可以連回 [[Matched filter]]：template 是已知 signal shape，cross-correlation 是 matched-filter statistic。它也連到 [[Array beamforming for seismic detection]]，因為 array processing 的重點是 coherent summation。
 
-![Array waveform correlation example](assets/adsp/projects/seismic_gibbons_ringdal_2006_p006_array_waveform_example.png)
+## Limitation
+
+需要高品質 template；對 unknown source、source mechanism 變化、path effect 變化較脆弱。報告中可把它和 wavelet-AIC 對比：前者是 similarity detector，後者是 general onset/change detector。
+
+## Figures For Report
+
+![Normalized waveform correlation detector equations](assets/adsp/projects/seismic_waveform_correlation_equations_cropped.png)
+
+![Array waveform correlation improves weak-event detection](assets/adsp/projects/seismic_array_correlation_example_cropped.png)
