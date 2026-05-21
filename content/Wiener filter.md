@@ -18,7 +18,7 @@ pages:
 
 # Wiener filter
 
-Wiener filter 假設 signal/noise 有統計模型，用 MSE 最小化得到最佳 linear estimator。這裡需要 [[Probability for random signals]]：expectation、autocorrelation、power spectrum 都會進來。
+Wiener filter 假設 signal/noise 有統計模型，用 MSE 最小化得到最佳 linear estimator。這裡需要 [[Probability for random signals]]：[[Expectation|expectation]]、autocorrelation、power spectrum 都會進來。
 
 連結：[[Frequency response]]、[[Probability for random signals]]。
 

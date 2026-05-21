@@ -19,7 +19,7 @@ pages:
 
 # Entropy coding length
 
-Entropy 給 lossless coding 的理論下界：平均碼長不可能長期低於 source entropy。Huffman 接近但不一定等於 entropy limit。
+Entropy 給 lossless coding 的理論下界：平均碼長不可能長期低於 source entropy。[[Huffman coding|Huffman]] 接近但不一定等於 entropy limit。
 
 連結：[[Compression math prerequisites]]、[[JPEG compression]]。
 

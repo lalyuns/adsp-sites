@@ -35,7 +35,7 @@ Write3 分成兩段：先介紹常用 filters，再進入 homomorphic/cepstrum�
 - [[Wiener filter]]：已知 signal/noise statistics 時最小化 MSE。
 - [[Equalizer filter]]：補償 channel distortion。
 
-後半段是另一個思路：[[Homomorphic signal processing]] 把 convolution 透過 Fourier 和 log 轉成 addition；[[Cepstrum]]、[[Complex cepstrum]]、[[Differential cepstrum]]、[[Mel-frequency cepstrum]] 都是這條線的變形。讀這裡時要特別分清 spectrum 的 frequency axis 和 cepstrum 的 quefrency axis。
+後半段是另一個思路：[[Homomorphic signal processing]] 把 [[Convolution|convolution]] 透過 Fourier 和 log 轉成 addition；[[Cepstrum]]、[[Complex cepstrum]]、[[Differential cepstrum]]、[[Mel-frequency cepstrum]] 都是這條線的變形。讀這裡時要特別分清 spectrum 的 frequency axis 和 cepstrum 的 quefrency axis。
 
 前置補洞：[[Probability for random signals]]、[[Cepstrum prerequisite map]]、[[Frequency response]]。
 

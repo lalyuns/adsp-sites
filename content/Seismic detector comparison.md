@@ -19,14 +19,14 @@ tags:
 
 | Method | Core statistic | Hidden assumption | Best case | Failure mode |
 |---|---|---|---|---|
-| STA/LTA | short/long energy ratio | arrival causes energy jump | sharp onset, high SNR | emergent onset, drifting noise |
-| AIC picker | change-point model selection | pre/post arrival have different variance/model | local arrival refinement | wrong window, multiple local minima |
-| Wavelet-AIC | multiscale consistency + AIC | real onset persists across scales | low SNR, singular onset | parameter-heavy; wavelet choice matters |
+| [[STA LTA picker|STA/LTA]] | short/long energy ratio | arrival causes energy jump | sharp onset, high SNR | emergent onset, drifting noise |
+| [[AIC picker|AIC]] picker | change-point model selection | pre/post arrival have different variance/model | local arrival refinement | wrong window, multiple local minima |
+| Wavelet-AIC | multiscale consistency + AIC | real onset persists across scales | low SNR, singular onset | parameter-heavy; [[Wavelet transform for seismic picking|wavelet]] choice matters |
 | Waveform correlation | normalized template similarity | future event resembles known template | repeating/co-located events | unknown source or changing path |
 | Array correlation | stacked coherent correlation | correlation traces align across array | weak events with array gain | wrong slowness/backazimuth model |
 
 ## Report Argument
 
-STA/LTA is a detector of amplitude change; AIC is a detector of statistical change; wavelet-AIC is a detector of scale-persistent singularity; waveform correlation is a detector of waveform similarity. This distinction is useful because it explains why no single method dominates all seismic picking tasks.
+STA/LTA is a detector of amplitude change; AIC is a detector of statistical change; wavelet-AIC is a detector of scale-persistent singularity; [[Waveform correlation detector|waveform correlation]] is a detector of waveform similarity. This distinction is useful because it explains why no single method dominates all seismic picking tasks.
 
 連結：[[Earle and Shearer 1994 automatic seismic phase picking]]、[[Zhang Thurber Rowe 2003 wavelet AIC P-wave picking]]、[[Gibbons Ringdal 2006 array waveform correlation]]。

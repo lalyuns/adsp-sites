@@ -7,8 +7,12 @@ topics:
 tags:
   - "adsp"
   - "project-concept"
+  - "hawkes-process"
+  - "neural-model"
 ---
 
 # Neural marked Hawkes process
 
-Neural marked Hawkes process 用 neural history embedding 表示過去事件，並讓 intensity 或 mark distribution conditioned on history。優點是彈性高，缺點是可解釋性和穩定性需要討論。
+Neural marked Hawkes process 用 neural state 取代手工指定的 kernel shape 或 mark distribution。它仍然圍繞 [[Conditional intensity]]，但把 history $\mathcal{H}_t$ 壓成 hidden state，再預測下一個 event time/type 與 mark。
+
+在 [[Hawkes process limit order book project]] 中，它的角色是 advanced extension：和 [[Hawkes kernel matrix]] 相比，neural model 較難解釋；和 [[Marked Hawkes process]] 相比，它更能處理 [[History dependent mark distribution]]。

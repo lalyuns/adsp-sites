@@ -7,8 +7,11 @@ topics:
 tags:
   - "adsp"
   - "project-concept"
+  - "hawkes-process"
 ---
 
 # Compound Hawkes process
 
-Compound Hawkes process 在 counting process 的每個 jump 上附加 random size。用於 LOB 時，每次 order event 不只改變 event count，也帶有 order size/volume。
+Compound Hawkes process 在 [[Hawkes process]] 的每個 jump 上附加 random size，也就是 mark。普通 counting process 只記 event 出現次數；compound process 進一步記錄每次 event 帶來多少 volume、order size 或 impact。
+
+用於 [[Limit order book event stream]] 時，可把 type $i$ 的累積 marked process 寫成 $S_i(t)=\sum_{t_n^i\le t}v_n^i$。這個概念連到 [[Marked Hawkes process]]、[[Conditional intensity]]，以及 [[Market impact simulation]]。

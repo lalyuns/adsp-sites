@@ -21,7 +21,7 @@ Fast algorithm design 的核心是「找結構」。如果一個運算可以寫�
 
 常見可利用的結構：
 
-- symmetry：例如 cosine/sine 或 DFT kernel 的共軛對稱。
+- symmetry：例如 cosine/sine 或 [[Discrete Fourier transform|DFT]] kernel 的共軛對稱。
 - periodicity：例如 $W_N^{k+N}=W_N^k$。
 - sparsity：很多 factor matrix 只有少數非零項。
 - separability：2-D transform 可拆成 rows 再 columns。

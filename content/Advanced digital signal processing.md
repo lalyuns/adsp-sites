@@ -23,11 +23,11 @@ tags:
 ## Course Lecture Maps
 
 - [[ADSP Write1 filter design and transforms]]：Fourier/DTFT/DFT/Z-transform 與 FIR/IIR 設計語言。
-- [[ADSP Write2 FIR design details]]：transition band、ripple、weighting、linear-phase FIR types、frequency sampling。
-- [[ADSP Write3 filters and homomorphic processing]]：常用 filters、matched/Wiener/equalizer、cepstrum 與 homomorphic processing。
+- [[ADSP Write2 FIR design details]]：[[Filter transition band|transition band]]、ripple、weighting、[[Linear phase FIR filter|linear-phase FIR]] types、[[Frequency sampling FIR design|frequency sampling]]。
+- [[ADSP Write3 filters and homomorphic processing]]：常用 filters、matched/Wiener/equalizer、[[Cepstrum|cepstrum]] 與 [[Homomorphic signal processing|homomorphic]] processing。
 - [[ADSP Write4 acoustics speech PCA SVD]]：acoustics、speech/STFT/formants、PCA/SVD。
-- [[ADSP Write5 data compression]]：JPEG、DCT、KLT、quantization、entropy coding。
-- [[ADSP Write6 fast algorithms]]：FFT/DCT fast implementation、butterfly、Cooley-Tukey、radix-4、prime-factor FFT。
+- [[ADSP Write5 data compression]]：[[JPEG compression|JPEG]]、[[Discrete cosine transform|DCT]]、[[Karhunen-Loeve transform|KLT]]、[[Quantization|quantization]]、entropy coding。
+- [[ADSP Write6 fast algorithms]]：FFT/DCT fast implementation、butterfly、Cooley-Tukey、radix-4、prime-factor [[Fast Fourier transform|FFT]]。
 
 ## Project Topics
 
@@ -35,7 +35,7 @@ tags:
 - [[Seismic wave signal processing project]]
 - [[Hawkes process limit order book project]]
 
-這兩個專題都和本課有關：地震波題目偏 signal detection、filtering、time-frequency analysis；Hawkes 題目偏 stochastic point process、event modeling、kernel estimation，並可和金融 limit order book 的 event streams 連結。
+這兩個專題都和本課有關：地震波題目偏 signal detection、filtering、time-frequency analysis；Hawkes 題目偏 stochastic point process、event modeling、kernel estimation，並可和金融 [[Limit order book event stream|limit order book]] 的 event streams 連結。
 
 ## Prerequisite Maps
 
@@ -48,3 +48,7 @@ tags:
 - [[Compression math prerequisites]]
 - [[Cepstrum prerequisite map]]
 - [[Fast algorithm prerequisite map]]
+
+## Link Maintenance
+
+- [[ADSP keyword link map]]：預設關鍵字連結規則；之後新增筆記時先看這篇，避免同一概念分散成多個入口。

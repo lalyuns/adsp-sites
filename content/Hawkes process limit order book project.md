@@ -61,7 +61,7 @@ tags:
 
 1. Abstract：說明 LOB 是 asynchronous marked event stream，本文比較 interpretable Hawkes、compound marked Hawkes、neural marked Hawkes。
 2. Introduction：連到 [[Limit order book event stream]]，說明為什麼 regular sampled time-series model 不夠自然。
-3. Hawkes process background：使用 [[Hawkes project notation]]、[[Conditional intensity]]、[[Hawkes branching ratio]]。
+3. [[Hawkes process]] background：使用 [[Hawkes project notation]]、[[Conditional intensity]]、[[Hawkes branching ratio]]。
 4. Nonparametric and interpretable kernels：主連結 [[Bacry Muzy 2015 Hawkes second-order statistics]]。
 5. Compound Hawkes for order size：主連結 [[Compound Hawkes process for LOB order size modeling]]。
 6. Neural marked Hawkes：主連結 [[Neural marked Hawkes process for LOB]]。

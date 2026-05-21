@@ -25,7 +25,7 @@ Cooley-Tukey FFT 的核心是 index decomposition。若 $N=N_1N_2$，就把原�
 
 - $N$ 被拆成哪些因子？
 - input index 是 decimation in time 還是 decimation in frequency？
-- twiddle factors 出現在兩層 DFT 的哪裡？
+- twiddle factors 出現在兩層 [[Discrete Fourier transform|DFT]] 的哪裡？
 - output 是否需要 bit reversal 或其他 permutation？
 
 這篇往下接 [[Radix-4 FFT]] 和 [[Prime factor FFT]]；往上回到 [[Fast Fourier transform]]。

@@ -28,7 +28,7 @@ Write5 是 ADSP 工具的整合案例：transform、perception、quantization、
 主線是：
 
 1. [[Data compression]] / [[Image compression]]：先分 lossless 和 lossy，再問 redundancy 來自哪裡。
-2. [[Chroma subsampling]]：利用人眼對色度較不敏感，降低 Cb/Cr resolution；4:2:2 和 4:2:0 是 sampling layout。
+2. [[Chroma subsampling]]：利用人眼對色度較不敏感，降低 Cb/Cr resolution；4:2:2 和 4:2:0 是 [[Sampling and aliasing|sampling]] layout。
 3. [[Karhunen-Loeve transform]] -> [[Discrete cosine transform]]：KLT 理論上 optimal 但 depends on data，DCT 固定且接近自然影像的 energy compaction。
 4. [[JPEG compression]]：color transform、8x8 DCT、[[Quantization]]、[[Zigzag scanning]]、run-length/Huffman。
 5. [[Huffman coding]] / [[Entropy coding length]]：利用 symbol probability 降低平均碼長。

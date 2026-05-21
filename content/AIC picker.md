@@ -20,4 +20,4 @@ $$
 
 $\hat{\tau}$ 取 AIC 最小的位置。這不是神秘公式，而是在問：哪個切點讓「arrival 前」與「arrival 後」兩段最像兩個不同統計狀態？
 
-報告中可把它定位為 STA/LTA 之後的 refinement：STA/LTA 找粗略 event window，AIC 在 window 內找更精準 onset。缺點是 window choice 與 local minima 會影響結果，所以 [[Wavelet transform for seismic picking]] 會引入 multiscale consistency。
+報告中可把它定位為 [[STA LTA picker|STA/LTA]] 之後的 refinement：STA/LTA 找粗略 event window，AIC 在 window 內找更精準 onset。缺點是 window choice 與 local minima 會影響結果，所以 [[Wavelet transform for seismic picking]] 會引入 multiscale consistency。

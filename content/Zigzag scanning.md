@@ -18,7 +18,7 @@ pages:
 
 # Zigzag scanning
 
-Zigzag 把 8x8 DCT coefficients 從低頻掃到高頻，使量化後的零聚集成長 run，方便 run-length 和 Huffman coding。
+Zigzag 把 8x8 [[Discrete cosine transform|DCT]] coefficients 從低頻掃到高頻，使量化後的零聚集成長 run，方便 run-length 和 [[Huffman coding|Huffman]] coding。
 
 連結：[[Compression math prerequisites]]、[[JPEG compression]]。
 

@@ -7,8 +7,11 @@ topics:
 tags:
   - "adsp"
   - "project-concept"
+  - "hawkes-process"
 ---
 
 # Hawkes process
 
-Hawkes process 是 self-exciting point process：過去事件會提升未來 intensity。基本式為 $\lambda(t)=\mu+\sum_{t_i<t}\phi(t-t_i)$。它適合描述 clustering，如 earthquakes、social events、order arrivals。
+Hawkes process 是 self-exciting point process：事件發生後，短時間內會提高後續事件的 [[Conditional intensity]]。它很適合描述 clustering，例如 aftershocks、order arrivals、click streams。
+
+單變量 Hawkes 只看一類 event；[[Multivariate Hawkes process]] 讓不同 event types 互相 excitation；[[Marked Hawkes process]] 則把 event size 或屬性一起建模。報告中要記住：Hawkes 的核心不是平均 rate，而是 history-dependent rate。

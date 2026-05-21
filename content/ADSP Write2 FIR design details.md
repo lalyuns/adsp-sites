@@ -23,7 +23,7 @@ pages:
 
 # ADSP Write2 FIR design details
 
-Write2 接著 Write1 的 FIR design，從「知道方法」進到「知道規格如何影響設計」。
+Write2 接著 Write1 的 [[FIR filter|FIR]] design，從「知道方法」進到「知道規格如何影響設計」。
 
 主線可以這樣走：
 

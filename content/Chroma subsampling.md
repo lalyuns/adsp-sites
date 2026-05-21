@@ -19,7 +19,7 @@ pages:
 
 # Chroma subsampling
 
-Chroma subsampling 把亮度 Y 保留較完整，色度 Cb/Cr 降解析度。4:2:2、4:2:0 是 sampling geometry，不是壓縮率魔法數。
+Chroma subsampling 把亮度 Y 保留較完整，色度 Cb/Cr 降解析度。4:2:2、4:2:0 是 [[Sampling and aliasing|sampling]] geometry，不是壓縮率魔法數。
 
 連結：[[Compression math prerequisites]]、[[JPEG compression]]。
 

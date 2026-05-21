@@ -20,6 +20,6 @@ C[n]=\frac{\sum_{\ell=0}^{L-1}(x[n+\ell]-\bar{x}_n)(s[\ell]-\bar{s})}
 {\sqrt{\sum_{\ell=0}^{L-1}(x[n+\ell]-\bar{x}_n)^2}\sqrt{\sum_{\ell=0}^{L-1}(s[\ell]-\bar{s})^2}}.
 $$
 
-它適合 repeating or co-located events，因為相近 source path 會產生相似 waveform。限制也很清楚：若 event mechanism、location 或 path effect 差很多，template similarity 會下降。
+它和 [[Matched filter]] 是同一族想法：若訊號形狀接近 template，similarity statistic 會變大。它適合 repeating or co-located events；若 event mechanism、location 或 path effect 差很多，template similarity 會下降。
 
-在 array case 中，會先對每個 station 算 $C_m[n]$，再根據 expected delay 對齊並 stack，連到 [[Array beamforming for seismic detection]]。
+在 array case 中，會先對每個 station 算 $C_m[n]$，再根據 expected delay 對齊並 stack，連到 [[Array beamforming for seismic detection]]。放在 [[Seismic wave signal processing project]] 中，它是從 single-station onset picking 轉向 weak-event detection 的方法。

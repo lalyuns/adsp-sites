@@ -18,7 +18,7 @@ pages:
 
 # Equalizer filter
 
-Equalizer 用來補償 channel 對不同頻率的衰減或 phase distortion。理想 inverse 可能會放大 noise，所以實務上常和 regularization 或 Wiener idea 合在一起。
+Equalizer 用來補償 channel 對不同頻率的衰減或 phase distortion。理想 inverse 可能會放大 noise，所以實務上常和 regularization 或 [[Wiener filter|Wiener]] idea 合在一起。
 
 連結：[[Frequency response]]、[[Probability for random signals]]。
 

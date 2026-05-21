@@ -17,7 +17,7 @@ pages:
 
 # Fourier transform family
 
-Fourier family 的差別主要來自 signal 是否連續/離散、週期/非週期。CTFT、Fourier series、DTFT、DFT 不是四套無關公式，而是同一個 basis expansion 在不同 domain 的版本。
+Fourier family 的差別主要來自 signal 是否連續/離散、週期/非週期。CTFT、Fourier series、[[Discrete-time Fourier transform|DTFT]]、[[Discrete Fourier transform|DFT]] 不是四套無關公式，而是同一個 basis expansion 在不同 domain 的版本。
 
 連結：[[ADSP notation survival guide]]、[[Spectral analysis workflow]]。
 

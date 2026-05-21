@@ -17,7 +17,7 @@ pages:
 
 # Butterfly computation
 
-Butterfly 是 FFT 的基本局部運算。最簡單的 2-point DFT 是
+Butterfly 是 [[Fast Fourier transform|FFT]] 的基本局部運算。最簡單的 2-point DFT 是
 
 $$
 X[0]=x[0]+x[1],\qquad X[1]=x[0]-x[1].
@@ -32,7 +32,7 @@ $$
 - 哪條線乘上 twiddle factor。
 - 這個 butterfly 屬於第幾個 stage。
 
-它連到 [[Cooley-Tukey FFT]]，因為 Cooley-Tukey 就是把大 DFT 拆成很多 butterfly-like local computations。
+它連到 [[Cooley-Tukey FFT]]，因為 Cooley-Tukey 就是把大 [[Discrete Fourier transform|DFT]] 拆成很多 butterfly-like local computations。
 
 
 ## 講義截圖

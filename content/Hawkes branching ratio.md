@@ -24,4 +24,4 @@ $$
 G_{ij}=\int_0^\infty \phi_{ij}(u)\,du,
 $$
 
-穩定條件通常寫成 spectral radius $\rho(G)<1$。報告中可用這個概念把 [[Hawkes kernel matrix]] 的視覺結果連到數學條件，而不是只說 kernel 看起來很大或很小。
+穩定條件通常寫成 spectral radius $ho(G)<1$。這個 note 連接三件事：[[Conditional intensity]] 定義 instantaneous rate，[[Hawkes kernel matrix]] 描述 excitation direction，branching ratio 則把整體 excitation 強度壓成 stability condition。寫 [[Hawkes process limit order book project]] 時，可用它避免只用「kernel 看起來很大」這種模糊描述。

@@ -25,20 +25,20 @@ tags:
 
 ## Seismic Wave Signal Processing Project
 
-主線連到 [[Seismic wave signal processing project]]。這一組 paper 被保留的是 detector statistic 的設計邏輯：energy ratio、change point、multiscale consistency、template correlation。被壓掉的內容不是完全沒用，而是目前對 10 頁報告的主論點密度較低。
+主線連到 [[Seismic wave signal processing project]]。這一組 paper 被保留的是 [[Detector statistic|detector statistic]] 的設計邏輯：energy ratio、change point、multiscale consistency、template correlation。被壓掉的內容不是完全沒用，而是目前對 10 頁報告的主論點密度較低。
 
 ### Earle and Shearer 1994
 
 主筆記：[[Earle and Shearer 1994 automatic seismic phase picking]]。
 
-保留：STA/LTA envelope picker、trigger threshold、travel-time curve quality control。這些能說明 automatic picking pipeline 如何從 waveform 產生 candidate arrival，再用物理 travel-time structure 做 sanity check。
+保留：[[STA LTA picker|STA/LTA]] envelope picker、trigger threshold、travel-time curve quality control。這些能說明 automatic picking pipeline 如何從 waveform 產生 candidate arrival，再用物理 travel-time structure 做 sanity check。
 
 壓掉：
 
 - 大量 global dataset 與 station/event bookkeeping：對報告的 signal-processing 主線幫助有限；只有在你要寫 data section 時才需要補。
 - 個別 phase 類型與全球路徑細節：它們屬於 seismology context，不是 ADSP method comparison 的核心。
 - 完整 performance statistics：若 final report 要比較 false alarm/missed pick 才回頭補，否則初稿只需說明 threshold trade-off。
-- 論文中的流程細節圖若只是操作步驟，不如在文中用「envelope -> STA/LTA ratio -> threshold trigger -> travel-time validation」四步文字化。
+- 論文中的流程細節圖若只是操作步驟，不如在文中用「envelope -> STA/LTA ratio -> threshold trigger -> [[Travel time curve|travel-time]] validation」四步文字化。
 
 回頭使用時機：需要寫「dataset and evaluation」小節，或老師要求說明 automatic picks 如何被 validated。
 
@@ -46,7 +46,7 @@ tags:
 
 主筆記：[[Zhang Thurber Rowe 2003 wavelet AIC P-wave picking]]。
 
-保留：AIC as change-point criterion、wavelet multiscale representation、跨尺度一致性提升 robustness。
+保留：AIC as change-point criterion、[[Wavelet transform for seismic picking|wavelet]] multiscale representation、跨尺度一致性提升 robustness。
 
 壓掉：
 
@@ -74,7 +74,7 @@ tags:
 
 ## Hawkes Process Limit Order Book Project
 
-主線連到 [[Hawkes process limit order book project]]。這一組 paper 被保留的是 conditional intensity、kernel matrix、branching/stability、mark distribution、neural history dependence。被壓掉的是金融市場背景、表格堆疊、以及可以用文字公式重寫的模型定義截圖。
+主線連到 [[Hawkes process limit order book project]]。這一組 paper 被保留的是 [[Conditional intensity|conditional intensity]]、[[Hawkes kernel matrix|kernel matrix]]、branching/stability、mark distribution、neural history dependence。被壓掉的是金融市場背景、表格堆疊、以及可以用文字公式重寫的模型定義截圖。
 
 ### Bacry and Muzy 2015
 
@@ -84,7 +84,7 @@ tags:
 
 壓掉：
 
-- Wiener-Hopf 方程完整推導：對目前報告主線太重；先保留「second-order statistics can identify kernels」這個概念即可。
+- [[Wiener filter|Wiener]]-Hopf 方程完整推導：對目前報告主線太重；先保留「second-order statistics can identify kernels」這個概念即可。
 - 公式截圖：已用 [[Hawkes project notation]] 統一 notation，避免每篇 paper 的符號互相打架。
 - 細緻估計演算法步驟：除非 final report 要主打 estimation method，否則只需要解釋它為何提供 interpretable kernel。
 - 過多 theoretical conditions：先把 stability 放到 [[Hawkes branching ratio]]，避免主筆記變成機率論筆記。
@@ -104,7 +104,7 @@ tags:
 - 細節參數、calibration setup、資料清理流程：除非要寫 experiment section，否則先不放。
 - 可由公式表達的 compound process 定義截圖：已用 $S_i(t)=\sum v_n^i$ 這類文字公式整理。
 
-回頭使用時機：需要寫 empirical results、market impact simulation，或要補 stylized facts。
+回頭使用時機：需要寫 empirical results、[[Market impact simulation|market impact]] simulation，或要補 stylized facts。
 
 ### Neural Marked Hawkes Process Paper
 
@@ -116,7 +116,7 @@ tags:
 
 - 大量 architecture/training implementation details：初稿只需要理解模組分工，不需要每個 layer 或 hyperparameter。
 - 結果表格截圖：表格適合 final report 的 comparison section，但在筆記階段容易變成「看分數」而不是懂模型。
-- benchmark dataset 細節：等你確定要把 neural marked Hawkes 作為主題中心，再回頭補。
+- benchmark dataset 細節：等你確定要把 neural [[Marked Hawkes process|marked Hawkes]] 作為主題中心，再回頭補。
 - loss function 的完整 technical derivation：先用 conditional intensity + mark likelihood 的概念理解即可。
 
 回頭使用時機：final report 若選 Hawkes/LOB 題目，且想把 neural model 作為 conclusion 前的 advanced extension，就需要補 training objective、evaluation metric、與 baseline table。

@@ -58,7 +58,7 @@ tags:
 ## Suggested Sections
 
 1. Abstract：一句話交代 seismic picking 是 ADSP detection problem，並比較 energy ratio、change-point、multiscale、correlation detector。
-2. Introduction：說明 phase arrival 對 earthquake location、travel-time analysis、event detection 的重要性。
+2. Introduction：說明 phase arrival 對 earthquake location、[[Travel time curve|travel-time]] analysis、event detection 的重要性。
 3. Signal model and notation：使用 [[Seismic project notation]]。
 4. Baseline detector: STA/LTA：主連結 [[Earle and Shearer 1994 automatic seismic phase picking]]。
 5. Change-point and multiscale picking：主連結 [[Zhang Thurber Rowe 2003 wavelet AIC P-wave picking]]。

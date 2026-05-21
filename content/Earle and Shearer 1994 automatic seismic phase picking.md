@@ -18,9 +18,9 @@ tags:
 
 1. 將 waveform 轉為 envelope/characteristic function，降低 polarity 與細節震盪的影響。
 2. 用 [[STA LTA picker]] 找 local energy 相對 background 的突增。
-3. 用 trigger rule 產生 candidate arrivals，再用 travel-time curve 與 quality control 排除不合理 picks。
+3. 用 trigger rule 產生 candidate arrivals，再用 [[Travel time curve|travel-time curve]] 與 quality control 排除不合理 picks。
 
-這張圖放在方法小節，解釋 detector statistic 如何從 waveform 產生。你要在圖旁寫：threshold crossing 是 decision rule，不是 arrival 的物理定義；因此 threshold choice 會影響 false alarm 與 missed detection trade-off。
+這張圖放在方法小節，解釋 [[Detector statistic|detector statistic]] 如何從 waveform 產生。你要在圖旁寫：threshold crossing 是 decision rule，不是 arrival 的物理定義；因此 threshold choice 會影響 false alarm 與 missed detection trade-off。
 
 ![STA/LTA envelope picker and trigger threshold](assets/adsp/projects/seismic_sta_lta_picker_figure.png)
 

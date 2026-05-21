@@ -17,7 +17,7 @@ pages:
 
 # Complex cepstrum
 
-Complex cepstrum 保留 phase，所以理論上可 inverse 回原訊號；但 phase unwrapping 和 zeros/poles 位置會讓計算很敏感。minimum phase 情況最乾淨。
+Complex [[Cepstrum|cepstrum]] 保留 phase，所以理論上可 inverse 回原訊號；但 phase unwrapping 和 zeros/poles 位置會讓計算很敏感。minimum phase 情況最乾淨。
 
 連結：[[Cepstrum prerequisite map]]、[[Homomorphic signal processing]]。
 

@@ -18,7 +18,7 @@ pages:
 
 # FIR filter
 
-FIR filter 的 impulse response 長度有限，所以一定 BIBO stable，也容易做 linear phase。代價是要達到尖銳 transition 通常需要較長 filter length。
+FIR filter 的 impulse response 長度有限，所以一定 BIBO stable，也容易做 [[Linear phase FIR filter|linear phase]]。代價是要達到尖銳 transition 通常需要較長 filter length。
 
 連結：[[Optimization for filter design]]、[[Frequency response]]。
 

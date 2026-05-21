@@ -21,7 +21,7 @@ $N_i(t)$ 表示 type $i$ event 到時間 $t$ 為止的累積數量。它的 incr
 
 ## Conditional Intensity
 
-Hawkes process 的核心是 conditional intensity：
+[[Hawkes process]] 的核心是 [[Conditional intensity|conditional intensity]]：
 
 $$
 \lambda_i(t)=\mu_i+\sum_{j=1}^{K}\int_0^t \phi_{ij}(t-s)dN_j(s).
@@ -47,7 +47,7 @@ $$
 
 ## Marks
 
-marked Hawkes 可寫成
+[[Marked Hawkes process|marked Hawkes]] 可寫成
 
 $$
 \lambda_i(t,v)=\lambda_i(t)\,p_i(v\mid \mathcal{H}_t).

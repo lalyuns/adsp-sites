@@ -19,7 +19,7 @@ pages:
 
 # Matrix multiplication complexity
 
-把 transform 寫成矩陣乘法可以看見 fast algorithm 的形狀。DFT 可寫成
+把 transform 寫成矩陣乘法可以看見 fast algorithm 的形狀。[[Discrete Fourier transform|DFT]] 可寫成
 
 $$
 X = F_N x,
@@ -33,7 +33,7 @@ $$
 
 其中 $P$ 是 permutation，$B$ 是 butterfly/small DFT block，$D$ 是 diagonal twiddle factor。這些 matrix individually 都比 dense $F_N$ 便宜。
 
-同樣的觀念也解釋 fast DCT。[[Discrete cosine transform]] 的矩陣可利用 even symmetry 和 separability 拆開；在 JPEG 中，8x8 block DCT 能快速計算，才讓壓縮 pipeline 可實作。
+同樣的觀念也解釋 fast DCT。[[Discrete cosine transform]] 的矩陣可利用 even symmetry 和 separability 拆開；在 [[JPEG compression|JPEG]] 中，8x8 block DCT 能快速計算，才讓壓縮 pipeline 可實作。
 
 相關路徑：[[Fast algorithm design]] -> [[Butterfly computation]] -> [[Cooley-Tukey FFT]]。
 

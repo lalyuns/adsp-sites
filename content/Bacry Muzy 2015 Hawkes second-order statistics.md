@@ -16,7 +16,7 @@ tags:
 
 ## Method In Words
 
-Multivariate Hawkes process：
+Multivariate [[Hawkes process]]：
 
 $$
 \lambda_i(t)=\mu_i+\sum_j\int_0^t \phi_{ij}(t-s)dN_j(s).

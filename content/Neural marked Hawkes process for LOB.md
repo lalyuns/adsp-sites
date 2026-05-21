@@ -14,7 +14,7 @@ tags:
 
 # Neural marked Hawkes process for LOB
 
-這篇用 neural architecture 處理 marked Hawkes model 的限制。傳統模型通常需要指定 kernel shape 與 mark distribution；neural marked Hawkes 則讓 hidden state summarize history，再同時預測 next event timing/type 和 mark。
+這篇用 neural architecture 處理 [[Marked Hawkes process|marked Hawkes]] model 的限制。傳統模型通常需要指定 kernel shape 與 mark distribution；neural marked Hawkes 則讓 hidden state summarize history，再同時預測 next event timing/type 和 mark。
 
 ## Method In Words
 

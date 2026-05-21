@@ -17,7 +17,7 @@ pages:
 
 # Filter transition band
 
-Transition band 是 passband 和 stopband 之間不可避免的緩衝區。transition 越窄、ripple 越小，通常需要越長的 FIR 或更高 order。
+Transition band 是 passband 和 stopband 之間不可避免的緩衝區。transition 越窄、ripple 越小，通常需要越長的 [[FIR filter|FIR]] 或更高 order。
 
 連結：[[Optimization for filter design]]、[[Frequency response]]。
 
