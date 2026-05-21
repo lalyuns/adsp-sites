@@ -7,8 +7,17 @@ topics:
 tags:
   - "adsp"
   - "project-concept"
+  - "seismic"
 ---
 
 # AIC picker
 
-AIC picker 把一個時間窗切成 arrival 前後兩段，假設兩段可用不同 statistical model 表示，選擇讓 AIC 最小的切點。它常用於精細定位 onset，但容易受 window choice 和 local minima 影響。
+AIC picker 把 onset picking 改寫成 [[Change point detection]]。給定一段 waveform window，假設切點 $k$ 之前與之後可用不同 variance/model 描述，常見形式可寫成
+
+$$
+\mathrm{AIC}(k)=k\log(\sigma_1^2(k))+(N-k-1)\log(\sigma_2^2(k)).
+$$
+
+$\hat{\tau}$ 取 AIC 最小的位置。這不是神秘公式，而是在問：哪個切點讓「arrival 前」與「arrival 後」兩段最像兩個不同統計狀態？
+
+報告中可把它定位為 STA/LTA 之後的 refinement：STA/LTA 找粗略 event window，AIC 在 window 內找更精準 onset。缺點是 window choice 與 local minima 會影響結果，所以 [[Wavelet transform for seismic picking]] 會引入 multiscale consistency。
