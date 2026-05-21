@@ -5,7 +5,6 @@ aliases:
 categories:
   - "[[Evergreen]]"
 topics:
-  - "[[Data compression]]"
 tags:
   - "adsp"
   - "compression"

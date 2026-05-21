@@ -20,7 +20,7 @@ pages:
 
 JPEG pipeline 要按順序讀：color transform -> chroma subsampling -> 8x8 block DCT -> quantization -> zigzag -> run-length/Huffman。最主要失真來自 quantization。
 
-連結：[[Compression math prerequisites]]、[[JPEG compression]]。
+連結：[[Compression math prerequisites]]、JPEG compression。
 
 
 ## 講義截圖

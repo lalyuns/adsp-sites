@@ -2,12 +2,10 @@
 created: 2026-05-21
 aliases:
   - "ADSP prerequisites"
-  - "DSP 數學工具"
 categories:
   - "[[Evergreen]]"
   - "[[Indexes]]"
 topics:
-  - "[[Advanced digital signal processing]]"
   - "[[Meta knowledge]]"
 type:
   - "[[MOCs]]"
@@ -20,6 +18,62 @@ tags:
 
 # ADSP math prerequisites MOC
 
-這張 prerequisite map 應該當成補課清單：complex number 負責 Fourier notation，linear algebra 負責 projection/PCA/SVD/KLT，probability 負責 Wiener filter、covariance、MSE，optimization 負責 least-squares/minimax，coding theory 負責 entropy/Huffman。
+這張 MOC 是補洞清單。你的背景有微積分與數理統計，所以重點不是重學所有數學，而是把它們接到 DSP notation、filter design、random signals、matrix transforms、point processes。
 
-連結：[[Advanced digital signal processing]]、[[ADSP math prerequisites MOC]]。
+## Notation And Fourier Basics
+
+- [[ADSP notation survival guide]]
+- [[Complex numbers for DSP]]
+- [[Euler formula]]
+- [[Fourier transform family]]
+- [[Discrete-time Fourier transform]]
+- [[Discrete Fourier transform]]
+- [[Normalized frequency]]
+- [[Z-transform]]
+- [[Unit circle and Z-transform]]
+
+## Filtering And Optimization
+
+- [[Frequency response]]
+- [[Convolution]]
+- [[FIR filter]]
+- [[IIR filter]]
+- [[Linear phase FIR filter]]
+- [[Optimization for filter design]]
+- [[Optimization norm for filter design]]
+- [[Least MSE FIR design]]
+- [[Minimax FIR design]]
+- [[Remez exchange algorithm]]
+- [[Weighted approximation error]]
+
+## Probability And Random Signals
+
+- [[Probability for random signals]]
+- [[Expectation]]
+- [[Covariance matrix]]
+- [[Matched filter]]
+- [[Wiener filter]]
+- [[Hawkes process]]
+- [[Multivariate Hawkes process]]
+- [[Marked Hawkes process]]
+
+## Linear Algebra And Transforms
+
+- [[Linear algebra for DSP]]
+- [[Orthogonality and inner product]]
+- [[Eigenvalues and eigenvectors]]
+- [[Singular value decomposition]]
+- [[Principal component analysis]]
+- [[Karhunen-Loeve transform]]
+- [[Matrix diagonalization for transforms]]
+
+## Report-Specific Prerequisites
+
+- [[Seismic phase picking]]
+- [[STA LTA picker]]
+- [[AIC picker]]
+- [[Wavelet transform for seismic picking]]
+- [[Waveform correlation detector]]
+- [[Limit order book events]]
+- [[Hawkes kernel matrix]]
+- [[Nonparametric Hawkes estimation]]

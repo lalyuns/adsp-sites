@@ -19,7 +19,7 @@ pages:
 
 Homomorphic 的關鍵 pipeline 是 convolution -> Fourier -> multiplication -> log -> addition。進入 cepstrum domain 後，source 和 filter 如果落在不同 quefrency range，就能用 lifter 分離。
 
-連結：[[Cepstrum prerequisite map]]、[[Homomorphic signal processing]]。
+連結：[[Cepstrum prerequisite map]]、Homomorphic signal processing。
 
 
 ## 講義截圖
