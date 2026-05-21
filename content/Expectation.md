@@ -4,6 +4,6 @@ title: Expectation
 
 # Expectation
 
-Needed for Wiener filtering: expectation is averaging over a random variable or stochastic process.
+Needed for Wiener filtering and stochastic signal/event models.
 
-This page is included so the public ADSP site keeps the same Obsidian link structure without exporting the whole original vault.
+This support page is included so the public site preserves useful cross-domain links without exporting the entire source vault.

@@ -4,6 +4,6 @@ title: Conditional expectation
 
 # Conditional expectation
 
-Statistics support page for Hawkes conditional intensity: conditioning on event history.
+Statistics support page for conditioning on history in point-process models.
 
-This page is included so the public ADSP site keeps the same Obsidian link structure without exporting the whole original vault.
+This support page is included so the public site preserves useful cross-domain links without exporting the entire source vault.

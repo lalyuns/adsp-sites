@@ -75,7 +75,7 @@ const config: QuartzConfig = {
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
-      // Disabled for ADSP notation aliases such as 4:2:2 on Windows builds.
+      // Disabled for notation aliases such as 4:2:2 on Windows builds.
       // Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
       Plugin.ContentPage(),

@@ -6,4 +6,4 @@ title: Evergreen
 
 Stable concept-note marker used by the source vault.
 
-This page is included so the public ADSP site keeps the same Obsidian link structure without exporting the whole original vault.
+This support page is included so the public site preserves useful cross-domain links without exporting the entire source vault.

@@ -4,6 +4,6 @@ title: Likelihood function
 
 # Likelihood function
 
-Statistics support page for parametric Hawkes and marked point-process fitting.
+Statistics support page for AIC and point-process likelihood fitting.
 
-This page is included so the public ADSP site keeps the same Obsidian link structure without exporting the whole original vault.
+This support page is included so the public site preserves useful cross-domain links without exporting the entire source vault.
