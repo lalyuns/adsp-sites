@@ -22,4 +22,20 @@ $$
 
 它和 [[Matched filter]] 是同一族想法：若訊號形狀接近 template，similarity statistic 會變大。它適合 repeating or co-located events；若 event mechanism、location 或 path effect 差很多，template similarity 會下降。
 
-在 array case 中，會先對每個 station 算 $C_m[n]$，再根據 expected delay 對齊並 stack，連到 [[Array beamforming for seismic detection]]。放在 [[Seismic wave signal processing project]] 中，它是從 single-station onset picking 轉向 weak-event detection 的方法。
+## ADSP Course Connection
+
+這是 seismic project 裡最直接連到 matched filtering 的部分。它不是找 onset sharpness，而是問「這段 waveform 是否像某個已知 template」。array case 中，會先對每個 station 算 $C_m[n]$，再根據 expected delay 對齊並 stack，連到 [[Array beamforming for seismic detection]]。
+
+## Mathematical Statistics Connection
+
+correlation peak 是 similarity evidence。若要設定 detection threshold，就需要 [[Probability for random signals]] 的 false alarm / noise distribution 直覺。
+
+## Links
+
+- [[Seismic wave detection as ADSP]]
+- [[Matched filter]]
+- [[Array beamforming for seismic detection]]
+- [[Gibbons Ringdal 2006 array waveform correlation]]
+- [[Detector statistic]]
+- [[Probability for random signals]]
+- [[Covariance matrix]]

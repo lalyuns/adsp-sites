@@ -20,4 +20,20 @@ $$
 
 $\hat{\tau}$ 取 AIC 最小的位置。這不是神秘公式，而是在問：哪個切點讓「arrival 前」與「arrival 後」兩段最像兩個不同統計狀態？
 
-報告中可把它定位為 [[STA LTA picker|STA/LTA]] 之後的 refinement：STA/LTA 找粗略 event window，AIC 在 window 內找更精準 onset。缺點是 window choice 與 local minima 會影響結果，所以 [[Wavelet transform for seismic picking]] 會引入 multiscale consistency。
+## ADSP Course Connection
+
+AIC picker 把 waveform picking 變成 model-based detector。和 [[STA LTA picker]] 相比，它不只看 energy jump，而是看 segmentation cost 是否支持前後兩段有不同 statistics。
+
+## Mathematical Statistics Connection
+
+AIC 來自 [[Akaike information criterion]]，背後是 [[Likelihood function]] 和 model selection。報告可以寫「AIC is a change-point criterion」，不用深入推導 asymptotic theory。
+
+## Links
+
+- [[Seismic phase picking]]
+- [[Change point detection]]
+- [[Akaike information criterion]]
+- [[Likelihood function]]
+- [[STA LTA picker]]
+- [[Wavelet transform for seismic picking]]
+- [[Seismic project notation]]

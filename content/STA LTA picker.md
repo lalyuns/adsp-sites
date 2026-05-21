@@ -20,6 +20,18 @@ $$
 
 若 $R[n]$ 超過 threshold，就判定附近可能有 phase arrival。直覺是：arrival 讓 local energy 突然升高，而 LTA 代表背景 noise level。
 
-報告中不要只說「計算 STA/LTA」。要說清楚它的 modeling assumption：arrival 是 amplitude/energy change。這也解釋它的 failure mode：若 onset 很 gradual、noise nonstationary、或 threshold 設錯，$R[n]$ 可能提前/延後 trigger。
+## ADSP Course Connection
 
-關聯：[[Detector statistic]]、[[Seismic project notation]]、[[Earle and Shearer 1994 automatic seismic phase picking]]。
+STA/LTA 是最直覺的 moving-window detector：短窗估 local energy，長窗估 background。它連到 filtering/smoothing、windowed statistics，以及 [[Detector statistic]] 的設計。報告中要說清楚它的 assumption：arrival 會造成 amplitude/energy jump。
+
+## Mathematical Statistics Connection
+
+threshold choice 對 false alarm/missed detection 有影響。若 noise nonstationary，LTA 估計的 background 會偏掉。
+
+## Links
+
+- [[Seismic phase picking]]
+- [[Detector statistic]]
+- [[Seismic project notation]]
+- [[Earle and Shearer 1994 automatic seismic phase picking]]
+- [[Probability for random signals]]

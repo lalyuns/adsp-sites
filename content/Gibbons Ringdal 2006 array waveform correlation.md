@@ -24,6 +24,24 @@ $$
 
 這就是 [[Array beamforming for seismic detection]] 與 [[Matched filter]] 的交會：不是疊加 raw waveform，而是疊加 similarity evidence。
 
+## ADSP Course Connection
+
+這篇是 seismic project 裡最強的 matched-filter / multichannel processing 連結。它把 detection 從 local onset picking 推到 template similarity 和 coherent stacking。
+
+## Mathematical Statistics Connection
+
+correlation traces 是 similarity statistics；thresholding correlation peaks 仍有 false alarm 問題。array stack 則利用 averaging/coherence 提升 evidence。
+
 這張圖放在 results/discussion 小節，說明 array stack 如何讓 weak-event correlation peak 更清楚。報告文字應強調：提升來自跨 station coherence，而非單一 station 的 amplitude 變大。
 
 ![Array waveform correlation improves weak-event detection](assets/adsp/projects/seismic_array_correlation_example_cropped.png)
+
+## Links
+
+- [[Waveform correlation detector]]
+- [[Array beamforming for seismic detection]]
+- [[Matched filter]]
+- [[Probability for random signals]]
+- [[Covariance matrix]]
+- [[Seismic wave detection as ADSP]]
+- [[Seismic wave signal processing project]]

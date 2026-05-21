@@ -17,7 +17,11 @@ tags:
 
 **How can an ADSP detector estimate seismic phase arrival time from noisy, nonstationary waveform data?**
 
-核心論點：phase picking 的本質是把連續 waveform 轉成一個可靠的 [[Detector statistic]]，再從 statistic 的 peak、minimum 或 threshold crossing 推出 arrival time $\hat{\tau}$。STA/LTA、AIC、wavelet-AIC、waveform correlation 的差異，不是誰比較「高級」，而是它們假設 arrival 會以什麼形式留下 evidence。
+核心論點：phase picking 的本質是把連續 waveform 轉成一個可靠的 [[Detector statistic]]，再從 statistic 的 peak、minimum 或 threshold crossing 推出 arrival time $\hat{\tau}$。STA/LTA、AIC、wavelet-AIC、waveform correlation 的差異，不是誰比較高級，而是它們假設 arrival 會以什麼形式留下 evidence。
+
+## Course Relevance Thesis
+
+地震波 project 和本課的關聯應寫成 [[Seismic wave detection as ADSP]]：seismogram 是 discrete-time signal，arrival picking 是 detector-statistic design，wavelet/STFT 是 nonstationary signal representation，waveform correlation 是 matched filtering。
 
 ## Report-Ready Argument
 
@@ -35,7 +39,7 @@ tags:
 - $D[n]$：detector statistic；pick rule 通常是 $\hat{\tau}=\arg\max_n D[n]$、$\arg\min_n D[n]$ 或 first threshold crossing。
 - $s_m[n]$：template waveform，用於 correlation detector。
 
-完整公式集中放在 [[Seismic project notation]]，報告正文只引用需要的式子。
+完整公式集中放在 [[Seismic project notation]]。
 
 ## Figures To Keep
 
@@ -58,10 +62,30 @@ tags:
 ## Suggested Sections
 
 1. Abstract：一句話交代 seismic picking 是 ADSP detection problem，並比較 energy ratio、change-point、multiscale、correlation detector。
-2. Introduction：說明 phase arrival 對 earthquake location、[[Travel time curve|travel-time]] analysis、event detection 的重要性。
-3. Signal model and notation：使用 [[Seismic project notation]]。
-4. Baseline detector: STA/LTA：主連結 [[Earle and Shearer 1994 automatic seismic phase picking]]。
-5. Change-point and multiscale picking：主連結 [[Zhang Thurber Rowe 2003 wavelet AIC P-wave picking]]。
-6. Template and array correlation：主連結 [[Gibbons Ringdal 2006 array waveform correlation]]。
-7. Discussion：用 [[Seismic detector comparison]] 對比 assumptions, strengths, failure modes。
-8. Conclusion：回到「detector statistic 是否穩定代表 physical arrival」。
+2. Introduction：說明 phase arrival 對 earthquake location、travel-time analysis、event detection 的重要性。
+3. ADSP connection：使用 [[Seismic report ADSP course alignment]] 與 [[Seismic wave detection as ADSP]]。
+4. Signal model and notation：使用 [[Seismic project notation]]。
+5. Baseline detector: STA/LTA：主連結 [[Earle and Shearer 1994 automatic seismic phase picking]]。
+6. Change-point and multiscale picking：主連結 [[Zhang Thurber Rowe 2003 wavelet AIC P-wave picking]]。
+7. Template and array correlation：主連結 [[Gibbons Ringdal 2006 array waveform correlation]]。
+8. Discussion：用 [[Seismic detector comparison]] 對比 assumptions, strengths, failure modes。
+9. Conclusion：回到「detector statistic 是否穩定代表 physical arrival」。
+
+## Links
+
+- [[Seismic report ADSP course alignment]]
+- [[Seismic wave detection as ADSP]]
+- [[Seismic project notation]]
+- [[Seismic detector comparison]]
+- [[Detector statistic]]
+- [[STA LTA picker]]
+- [[AIC picker]]
+- [[Akaike information criterion]]
+- [[Wavelet transform for seismic picking]]
+- [[Waveform correlation detector]]
+- [[Array beamforming for seismic detection]]
+- [[Matched filter]]
+- [[Short-time Fourier transform]]
+- [[Probability for random signals]]
+- [[Change point detection]]
+- [[Likelihood function]]

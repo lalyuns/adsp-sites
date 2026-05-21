@@ -22,11 +22,27 @@ tags:
 | [[STA LTA picker|STA/LTA]] | short/long energy ratio | arrival causes energy jump | sharp onset, high SNR | emergent onset, drifting noise |
 | [[AIC picker|AIC]] picker | change-point model selection | pre/post arrival have different variance/model | local arrival refinement | wrong window, multiple local minima |
 | Wavelet-AIC | multiscale consistency + AIC | real onset persists across scales | low SNR, singular onset | parameter-heavy; [[Wavelet transform for seismic picking|wavelet]] choice matters |
-| Waveform correlation | normalized template similarity | future event resembles known template | repeating/co-located events | unknown source or changing path |
-| Array correlation | stacked coherent correlation | correlation traces align across array | weak events with array gain | wrong slowness/backazimuth model |
+| Waveform correlation | normalized template similarity | future event resembles known template | repeating/co-located events | poor for novel mechanisms |
+| Array correlation | coherent stack of station statistics | signal aligns across array; noise does not | weak-event detection | needs array geometry/delay correction |
 
-## Report Argument
+## ADSP Course Connection
 
-STA/LTA is a detector of amplitude change; AIC is a detector of statistical change; wavelet-AIC is a detector of scale-persistent singularity; [[Waveform correlation detector|waveform correlation]] is a detector of waveform similarity. This distinction is useful because it explains why no single method dominates all seismic picking tasks.
+這張表的重點是：每個 method 都是不同的 signal representation plus decision rule。這正是 ADSP 的核心。
 
-連結：[[Earle and Shearer 1994 automatic seismic phase picking]]、[[Zhang Thurber Rowe 2003 wavelet AIC P-wave picking]]、[[Gibbons Ringdal 2006 array waveform correlation]]。
+## Mathematical Statistics Connection
+
+STA/LTA 是 threshold decision；AIC 是 likelihood/model-selection decision；correlation detector 是 similarity statistic；array stacking 是 averaging/coherence evidence。
+
+## Links
+
+- [[Seismic wave signal processing project]]
+- [[Seismic wave detection as ADSP]]
+- [[Detector statistic]]
+- [[STA LTA picker]]
+- [[AIC picker]]
+- [[Akaike information criterion]]
+- [[Wavelet transform for seismic picking]]
+- [[Waveform correlation detector]]
+- [[Array beamforming for seismic detection]]
+- [[Matched filter]]
+- [[Probability for random signals]]

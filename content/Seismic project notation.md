@@ -24,8 +24,6 @@ tags:
 
 ## STA/LTA Statistic
 
-可寫成
-
 $$
 \mathrm{STA}[n]=\frac{1}{N_s}\sum_{i=n-N_s+1}^{n} e[i],
 \quad
@@ -36,11 +34,7 @@ $$
 R[n]=\frac{\mathrm{STA}[n]}{\mathrm{LTA}[n]+\epsilon}.
 $$
 
-當 $R[n]$ 超過 threshold 時，代表 short-term energy 相對 background 有突增。
-
 ## AIC Change-Point Statistic
-
-對長度 $N$ 的 window，候選切點 $k$ 的常見形式為
 
 $$
 \mathrm{AIC}(k)=k\log\operatorname{var}(x[1:k])+(N-k-1)\log\operatorname{var}(x[k+1:N]).
@@ -48,30 +42,30 @@ $$
 
 $\mathrm{AIC}(k)$ 最小的位置作為 arrival pick。
 
-## Wavelet Coefficients
-
-Continuous notation 可寫成
+## Correlation Statistic
 
 $$
-W_x(a,b)=\frac{1}{\sqrt{a}}\int x(t)\psi\left(\frac{t-b}{a}\right)dt,
+C[n]=\frac{\langle x_n-\bar{x}_n, s-\bar{s}\rangle}
+{\|x_n-\bar{x}_n\|\,\|s-\bar{s}\|}.
 $$
 
-其中 $a$ 是 scale、$b$ 是 time shift。報告中可用這個式子解釋 multiscale，而不必深入所有 wavelet family。
+## ADSP Course Connection
 
-## Normalized Correlation
+這些 notation 把 seismic picking 寫成 detector-statistic design：energy ratio、segmentation cost、template similarity。它們分別連到 filtering/windowing、model selection、matched filtering。
 
-template detector 可寫成
+## Mathematical Statistics Connection
 
-$$
-C_m[\ell]=
-\frac{\sum_n s_m[n]x_m[n+\ell]}
-{\sqrt{\sum_n s_m[n]^2}\sqrt{\sum_n x_m[n+\ell]^2}}.
-$$
+AIC 連到 [[Akaike information criterion]] 和 [[Likelihood function]]；correlation 連到 [[Covariance matrix]]；threshold 和 noise interpretation 連到 [[Probability for random signals]]。
 
-array detector 再把多個 $C_m$ 對齊後加權平均：
+## Links
 
-$$
-C_{\mathrm{array}}[\ell]=\sum_{m=1}^{M}w_m C_m[\ell+\delta_m].
-$$
-
-連結：[[STA LTA picker]]、[[AIC picker]]、[[Waveform correlation detector]]。
+- [[Seismic wave signal processing project]]
+- [[Seismic wave detection as ADSP]]
+- [[Detector statistic]]
+- [[STA LTA picker]]
+- [[AIC picker]]
+- [[Akaike information criterion]]
+- [[Waveform correlation detector]]
+- [[Matched filter]]
+- [[Covariance matrix]]
+- [[Probability for random signals]]
