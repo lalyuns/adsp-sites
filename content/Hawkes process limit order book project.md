@@ -53,6 +53,10 @@ tags:
 
 ![Neural marked Hawkes architecture with history-dependent marks](assets/adsp/projects/hawkes_neural_marked_architecture_cropped.png)
 
+## Reading Triage
+
+這份 project note 是報告主線，不是逐段翻譯。被我壓掉或暫時不用的論文內容，集中記在 [[ADSP project paper triage notes#Hawkes Process Limit Order Book Project]]。寫 final report 時若需要補實驗細節、資料設定、或 reviewer-style limitation，再從那篇 triage note 回去找。
+
 ## Suggested Sections
 
 1. Abstract：說明 LOB 是 asynchronous marked event stream，本文比較 interpretable Hawkes、compound marked Hawkes、neural marked Hawkes。

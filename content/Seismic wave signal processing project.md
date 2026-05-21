@@ -51,6 +51,10 @@ tags:
 
 ![Array waveform correlation improves weak-event detection](assets/adsp/projects/seismic_array_correlation_example_cropped.png)
 
+## Reading Triage
+
+這份 project note 是報告主線，不是逐段翻譯。被我壓掉或暫時不用的論文內容，集中記在 [[ADSP project paper triage notes#Seismic Wave Signal Processing Project]]。寫 final report 時若需要補實驗細節、資料設定、或 reviewer-style limitation，再從那篇 triage note 回去找。
+
 ## Suggested Sections
 
 1. Abstract：一句話交代 seismic picking 是 ADSP detection problem，並比較 energy ratio、change-point、multiscale、correlation detector。
