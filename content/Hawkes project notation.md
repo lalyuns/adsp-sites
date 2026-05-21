@@ -35,6 +35,10 @@ $$
 
 $\mu_i$ 是 baseline intensity，$\phi_{ij}$ 是 type $j$ event 對 type $i$ intensity 的 kernel。
 
+## ADSP Course Connection
+
+這個 notation 把 Hawkes 寫成 event-domain filtering：$dN_j(t)$ 是 event impulse，$\phi_{ij}$ 是 response kernel，$\lambda_i(t)$ 是 filtered activity level。這連到 [[Convolution]] 和 [[Probability for random signals]]。
+
 ## Stability
 
 定義 branching matrix
@@ -54,3 +58,21 @@ $$
 $$
 
 傳統模型可能讓 $p_i$ 很簡單；[[Neural marked Hawkes process]] 讓 $p_i(v\mid \mathcal{H}_t)$ 由 neural history vector 決定。
+
+## Mathematical Statistics Connection
+
+這裡用到 [[Conditional expectation]] 的 conditioning 直覺、[[Conditional distribution]] 的 mark model，以及 [[Expectation]] 對 branching ratio 的平均解釋。
+
+## Links
+
+- [[Hawkes process limit order book project]]
+- [[Hawkes process as event-domain filtering]]
+- [[Conditional intensity]]
+- [[Hawkes kernel matrix]]
+- [[Hawkes branching ratio]]
+- [[Marked Hawkes process]]
+- [[Convolution]]
+- [[Probability for random signals]]
+- [[Conditional expectation]]
+- [[Conditional distribution]]
+- [[Expectation]]

@@ -18,6 +18,20 @@ $$
 p(v_{n+1}\mid k_{n+1},t_{n+1},\mathcal{H}_{t_{n+1}}).
 $$
 
-在 LOB 中，order size 不是獨立噪音。它可能受近期 volatility、order-flow imbalance、queue depletion、前一串 market orders 影響。傳統 marked Hawkes 常用較簡單的 parametric mark distribution；[[Neural marked Hawkes process]] 的動機是用 neural encoder 把 $\mathcal{H}_t$ 壓成 state，再預測 mark distribution。
+在 LOB 中，order size 不是獨立噪音。它可能受近期 volatility、order-flow imbalance、queue depletion、前一串 market orders 影響。
 
-這個 note 可放在報告中銜接 compound Hawkes 與 neural [[Marked Hawkes process|marked Hawkes]]：前者讓 size 進入模型，後者讓 size distribution 更彈性地 depends on history。
+## ADSP Course Connection
+
+這是 event-stream 版本的 adaptive/statistical signal modeling：representation 不是固定特徵，而是根據 history state 改變。它和 [[Probability for random signals]] 共享同一個觀點：signal behavior 要用 distribution 和 conditioning 描述。
+
+## Mathematical Statistics Connection
+
+核心是 [[Conditional distribution]]。若模型用 neural network 產生 distribution parameter，就仍然是在估計 conditional law，不只是做黑箱分類。
+
+## Links
+
+- [[Marked Hawkes process]]
+- [[Neural marked Hawkes process]]
+- [[Conditional intensity]]
+- [[Conditional distribution]]
+- [[Probability for random signals]]

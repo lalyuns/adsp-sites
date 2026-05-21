@@ -14,4 +14,19 @@ tags:
 
 Limit order book events 包含 limit orders、market orders、cancelations，通常還分 bid/ask side，並帶有 price/volume。把 LOB 看成 [[Limit order book event stream]] 後，資料不再是固定間隔取樣的 price sequence，而是 timestamped events。
 
-這個觀點自然連到 [[Multivariate Hawkes process]]：不同 event type 之間可能互相激發；也連到 [[Marked Hawkes process]]：order size 或 volume 是 mark，不能只被當成普通欄位丟掉。
+## ADSP Course Connection
+
+這篇負責把金融資料翻譯成 signal representation。ADSP 報告中不要從交易制度細節開始，而要先說：LOB events 是 irregular multichannel event signal，因此適合用 [[Multivariate Hawkes process]] 和 [[Marked Hawkes process]]。
+
+## Mathematical Statistics Connection
+
+事件類型是 categorical mark，order size 是 numerical mark；兩者都可放進 [[Conditional distribution]]。事件到達時間則由 [[Conditional intensity]] 描述。
+
+## Links
+
+- [[Limit order book event stream]]
+- [[Conditional intensity]]
+- [[Multivariate Hawkes process]]
+- [[Marked Hawkes process]]
+- [[Hawkes process limit order book project]]
+- [[Conditional distribution]]

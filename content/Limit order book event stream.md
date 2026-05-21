@@ -18,4 +18,22 @@ Limit order book (LOB) 可以看成 market events 的 timestamped sequence，而
 - type $k_n$，例如 limit order、market order、cancel、bid side、ask side；
 - mark $v_n$，例如 order size 或 volume。
 
-因此自然模型是 marked point process。若把資料硬切成每秒或每分鐘的 bars，會遺失 event clustering、order flow imbalance、queue reaction 等 microstructure 資訊。[[Hawkes process limit order book project]] 的核心就是直接在 event time 上建模 [[Conditional intensity]]、[[Multivariate Hawkes process]] 的 event-type interaction，以及 [[Marked Hawkes process]] 的 order-size marks。
+因此自然模型是 marked point process。
+
+## ADSP Course Connection
+
+這篇是報告的 signal representation note。ADSP 通常從 regular samples $x[n]$ 開始，但 LOB 是 irregular event data；因此要用 [[Conditional intensity]] 取代 amplitude，用 [[Hawkes kernel matrix]] 取代 ordinary filter response。
+
+## Mathematical Statistics Connection
+
+event time model 需要 point-process probability；mark model 需要 [[Conditional distribution]]；若要估參數，需要 [[Likelihood function]]。
+
+## Links
+
+- [[Hawkes process limit order book project]]
+- [[Conditional intensity]]
+- [[Multivariate Hawkes process]]
+- [[Marked Hawkes process]]
+- [[Hawkes process as event-domain filtering]]
+- [[Conditional distribution]]
+- [[Likelihood function]]

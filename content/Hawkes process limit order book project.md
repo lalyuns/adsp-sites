@@ -19,11 +19,15 @@ tags:
 
 核心論點：LOB data 是 asynchronous marked point process。ADSP 的角色是建模 event timing、event type、order size mark 之間的 dependence。傳統 Hawkes 給出可解釋 kernel；compound/marked Hawkes 把 size 加入；neural marked Hawkes 則放寬 mark distribution 與 history dependence 的限制。
 
+## Course Relevance Thesis
+
+Hawkes process 和本課的關聯應寫成 [[Hawkes process as event-domain filtering]]：event stream 是 signal，[[Conditional intensity]] 是 signal representation，[[Hawkes kernel matrix]] 是 event-response kernel，kernel estimation 是 system identification / random signal estimation。
+
 ## Report-Ready Argument
 
 1. [[Conditional intensity]] 是 Hawkes model 的中心：$\lambda_i(t)$ 是在 history $\mathcal{H}_t$ 已知時，type $i$ event 下一瞬間發生的 rate。
 2. [[Hawkes kernel matrix]] 表示 excitation direction：$\phi_{ij}$ 描述 type $j$ event 如何影響 type $i$ future intensity。
-3. [[Hawkes branching ratio]] 與 spectral radius 控制 stability；這是報告中連接「數學條件」與「金融事件群聚」的橋。
+3. [[Hawkes branching ratio]] 與 spectral radius 控制 stability；這是報告中連接數學條件與金融事件群聚的橋。
 4. [[Marked Hawkes process]] 與 [[History dependent mark distribution]] 用來處理 order size/volume，不應只把 size 當附屬欄位。
 5. [[Neural marked Hawkes process]] 的價值在於讓 mark distribution depends on full history，而不是只靠最近事件或簡單 parametric assumption。
 
@@ -49,7 +53,7 @@ tags:
 
 ![Compound Hawkes model links event intensity and market impact](assets/adsp/projects/hawkes_compound_market_impact_cropped.png)
 
-放在 neural model 小節：這張圖只用來說明 architecture 分工。encoder summarizes event history；intensity head predicts next event timing/type；mark head models order size distribution。不要讓圖代替這三個句子的解釋。
+放在 neural model 小節：這張圖只用來說明 architecture 分工。encoder summarizes event history；intensity head predicts event timing/type；mark head models order size distribution。不要讓圖代替這三個句子的解釋。
 
 ![Neural marked Hawkes architecture with history-dependent marks](assets/adsp/projects/hawkes_neural_marked_architecture_cropped.png)
 
@@ -61,9 +65,25 @@ tags:
 
 1. Abstract：說明 LOB 是 asynchronous marked event stream，本文比較 interpretable Hawkes、compound marked Hawkes、neural marked Hawkes。
 2. Introduction：連到 [[Limit order book event stream]]，說明為什麼 regular sampled time-series model 不夠自然。
-3. [[Hawkes process]] background：使用 [[Hawkes project notation]]、[[Conditional intensity]]、[[Hawkes branching ratio]]。
-4. Nonparametric and interpretable kernels：主連結 [[Bacry Muzy 2015 Hawkes second-order statistics]]。
-5. Compound Hawkes for order size：主連結 [[Compound Hawkes process for LOB order size modeling]]。
-6. Neural marked Hawkes：主連結 [[Neural marked Hawkes process for LOB]]。
-7. Discussion：使用 [[Hawkes model comparison]] 比較 interpretability、mark modeling、data requirement。
-8. Conclusion：回到「from interpretable kernels to flexible history-dependent marks」。
+3. Hawkes process background：使用 [[Hawkes project notation]]、[[Conditional intensity]]、[[Hawkes branching ratio]]。
+4. ADSP connection：使用 [[Hawkes report ADSP course alignment]] 與 [[Hawkes process as event-domain filtering]]。
+5. Nonparametric and interpretable kernels：主連結 [[Bacry Muzy 2015 Hawkes second-order statistics]]。
+6. Compound Hawkes for order size：主連結 [[Compound Hawkes process for LOB order size modeling]]。
+7. Neural marked Hawkes：主連結 [[Neural marked Hawkes process for LOB]]。
+8. Discussion：使用 [[Hawkes model comparison]] 比較 interpretability、mark modeling、data requirement。
+9. Conclusion：回到「from interpretable kernels to flexible history-dependent marks」。
+
+## Links
+
+- [[Hawkes report ADSP course alignment]]
+- [[Hawkes process as event-domain filtering]]
+- [[Limit order book event stream]]
+- [[Conditional intensity]]
+- [[Hawkes kernel matrix]]
+- [[Hawkes branching ratio]]
+- [[Marked Hawkes process]]
+- [[Probability for random signals]]
+- [[Convolution]]
+- [[Wiener filter]]
+- [[Conditional expectation]]
+- [[Likelihood function]]
